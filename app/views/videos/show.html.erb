@@ -1,0 +1,62 @@
+<main class="main">
+  <div class="inner">
+    <div class="video__wrapper">
+      <p class="video__hedding">
+        <%= @video.video_name%>
+      </p>
+      <%= link_to "by #{@video.user.channel_name}", root_path, class: :video__user %>
+      
+      <% if current_user == @video.user %>
+        <div class="video__manage">
+          <%= link_to "編集する", root_path, class: :video__btn %>
+          <%= link_to "削除する", root_path, class: :video__btn %>
+        </div>
+      <% end %>
+
+      <div class="video__image">
+        <%= image_tag @video.image %>
+      </div>
+      <div class="video__body">
+        <div class="video__detail">
+          <p class="detail__title">動画ジャンル</p>
+          <p class="detail__message">
+            <%= @video.genre.name %>
+          </p>
+        </div>
+        <div class="video__detail">
+          <p class="detail__title">動画URL</p>
+          <p class="detail__message">
+            <%= @video.video_url %>
+          </p>
+        </div>
+        <div class="video__detail">
+          <p class="detail__title">動画概要</p>
+          <p class="detail__message">
+            <%= @video.overview %>
+          </p>
+        </div>
+      </div>
+      <div class="video__comments">
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+          <%# <%= form_with local: true do |f|%>
+            <div class="field">
+              <%# <%= f.label :hoge, "コメント" %><br />
+              <%# <%= f.text_field :hoge %>
+            </div>
+            <div class="actions">
+              <%# <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <%# <% end %> 
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+            <li class="comments_list">
+              <%# <%= " コメントのテキスト "%>
+              <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
+            </li>
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>

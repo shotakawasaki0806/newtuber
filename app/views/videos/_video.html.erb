@@ -1,7 +1,7 @@
 <div class="card">
-  <%= link_to image_tag(video.image, class: :card__img ), root_path%>
+  <%= link_to image_tag(video.image, class: :card__img ), video_path(video)%>
   <div class="card__body">
-    <%= link_to video.video_name, root_path, class: :card__title%>
+    <%= link_to video.video_name, video_path(video), class: :card__title%>
     <p class="card__summary">
       <%= video.genre.name %>
     </p>
