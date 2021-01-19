@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_video, except: [:index, :new, :create]
-  before_action :move_to_index, only: [:edit, :update]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
   
   def index
     @video = Video.all
@@ -31,6 +31,14 @@ class VideosController < ApplicationController
       redirect_to video_path(@video)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @video.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
     end
   end
 
