@@ -16,6 +16,8 @@
       <div class="video__image">
         <% if @video.image.present? %>
           <%= image_tag @video.image %>
+        <% else %>
+          <%= image_tag "no_image.png" %>
         <% end %>
       </div>
       <div class="video__body">
