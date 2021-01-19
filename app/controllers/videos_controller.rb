@@ -1,5 +1,7 @@
 class VideosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_video, except: [:index, :new, :create]
+  before_action :move_to_index, only: [:edit, :update]
   
   def index
     @video = Video.all
@@ -19,12 +21,32 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video = Video.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @video.update(video_params)
+      redirect_to video_path(@video)
+    else
+      render :edit
+    end
   end
 
   private
 
   def video_params
     params.require(:video).permit(:video_name, :video_url, :overview, :genre_id, :image).merge(user_id: current_user.id)
+  end
+
+  def set_video
+    @video = Video.find(params[:id])
+  end
+
+  def move_to_index
+    unless current_user == @video.user
+      redirect_to root_path
+    end
   end
 end
