@@ -17,10 +17,11 @@ class Genre < ActiveHash::Base
     { id: 15, name: 'ペット' },
     { id: 16, name: '衝撃動画' },
     { id: 17, name: '旅行' },
-    { id: 18, name: 'トレンド' },
-    { id: 19, name: '政治・ニュース' },
-    { id: 20, name: 'パチンコ' },
-    { id: 21, name: 'その他' }
+    { id: 18, name: 'スポーツ' },
+    { id: 19, name: 'トレンド' },
+    { id: 20, name: '政治・ニュース' },
+    { id: 21, name: 'パチンコ' },
+    { id: 22, name: 'その他' }
   ]
 
   include ActiveHash::Associations
