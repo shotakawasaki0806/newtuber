@@ -12,6 +12,7 @@ class User < ApplicationRecord
     validates_format_of :password, with: PASSWORD_REGEX
   end
 
+  has_many :videos
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
