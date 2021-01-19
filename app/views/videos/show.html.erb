@@ -14,7 +14,9 @@
       <% end %>
 
       <div class="video__image">
-        <%= image_tag @video.image %>
+        <% if @video.image.present? %>
+          <%= image_tag @video.image %>
+        <% end %>
       </div>
       <div class="video__body">
         <div class="video__detail">
