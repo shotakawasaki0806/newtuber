@@ -9,6 +9,6 @@
     <p class="card__summary">
       <%= video.genre.name %>
     </p>
-    <%= link_to "by #{video.user.channel_name}", root_path, class: :card__user %>
+    <%= link_to "by #{video.user.channel_name}", user_path(video.user), class: :card__user %>
   </div>
 </div>

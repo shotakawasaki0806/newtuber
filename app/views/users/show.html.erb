@@ -1,0 +1,47 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.channel_name}さんの情報"%>
+      </h2>
+      <div class="user__image">
+        <% if @user.image.present? %>
+          <%= image_tag @user.image %>
+        <% else %>
+          <%= image_tag "no_image.png" %>
+        <% end %>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">チャンネル名</th>
+            <td class="table__col2"><%= @user.channel_name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">チャンネルURL</th>
+            <td class="table__col2"><%= @user.channel_url %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">動画ジャンル</th>
+            <td class="table__col2"><%= @user.genre.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">チャンネル紹介</th>
+            <td class="table__col2"><%= @user.introduction %></td>
+          </tr>
+        </tbody>
+      </table>
+      <% if current_user == @user %>
+        <div class="user__manage">
+          <%= link_to "登録変更", edit_user_path(current_user), class: :useredit__btn %>
+        </div>
+      <% end %>
+      <h2 class="page-heading">
+        <%= "#{@user.channel_name}さんの動画PR"%>
+      </h2>
+      <div class="user__card">
+        <%= render partial: 'videos/video', collection: @user.videos %>
+      </div>
+    </div>
+  </div>
+</div>
