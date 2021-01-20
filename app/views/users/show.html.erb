@@ -19,7 +19,7 @@
           </tr>
           <tr>
             <th class="table__col1">チャンネルURL</th>
-            <td class="table__col2"><%= @user.channel_url %></td>
+            <td class="table__col2"><%= link_to "#{@user.channel_url}", "#{@user.channel_url}",target: :_blank, rel: "noopener noreferrer" %></td>
           </tr>
           <tr>
             <th class="table__col1">動画ジャンル</th>

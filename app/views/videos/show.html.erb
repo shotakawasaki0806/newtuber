@@ -30,7 +30,7 @@
         <div class="video__detail">
           <p class="detail__title">動画URL</p>
           <p class="detail__message">
-            <%= @video.video_url %>
+            <%= link_to "#{@video.video_url}", "#{@video.video_url}",target: :_blank, rel: "noopener noreferrer" %>
           </p>
         </div>
         <div class="video__detail">
