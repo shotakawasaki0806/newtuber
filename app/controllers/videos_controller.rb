@@ -22,7 +22,7 @@ class VideosController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = Comment.all
+    @comments = @video.comments
   end
 
   def edit
