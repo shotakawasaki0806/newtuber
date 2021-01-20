@@ -13,6 +13,7 @@ class User < ApplicationRecord
   end
 
   has_many :videos
+  has_many :comments
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
