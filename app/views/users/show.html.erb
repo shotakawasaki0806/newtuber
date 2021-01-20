@@ -40,7 +40,7 @@
         <%= "#{@user.channel_name}さんの動画PR"%>
       </h2>
       <div class="user__card">
-        <%= render partial: 'videos/video', collection: @user.videos %>
+        <%= render partial: 'videos/video', collection: @user.videos.order("created_at DESC") %>
       </div>
     </div>
   </div>
