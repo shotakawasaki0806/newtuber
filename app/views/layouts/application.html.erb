@@ -20,7 +20,6 @@
           <% if user_signed_in? %>
             <div class="red__right">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :red__logout %>
-              <%= link_to "登録変更", edit_user_path(current_user), class: :red__btn %>
               <%= link_to "New Video", new_video_path, class: :red__btn %>
             </div>
           <% else %>
