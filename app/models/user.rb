@@ -6,7 +6,7 @@ class User < ApplicationRecord
   
   with_options presence: true do
     validates :channel_name, :introduction
-    validates :channel_url, format: {with: /\A(https:\/\/)(www\.youtube\.com\/(channel\/|user\/))[a-zA-Z0-9\-]{1,}\z/}
+    validates :channel_url, format: {with: /\A(https:\/\/)(www\.youtube\.com\/(channel\/|c\/|user\/))[a-zA-Z0-9\-_]{1,}\z/}
     validates :genre_id, numericality: { other_than: 1 }
     PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/
     validates_format_of :password, with: PASSWORD_REGEX
