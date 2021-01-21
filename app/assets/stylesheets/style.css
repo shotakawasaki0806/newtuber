@@ -163,6 +163,11 @@ a {
   text-align: right;
   text-decoration: underline;
 }
+.card__wrapper::after {
+  display: block;
+  content:"";
+  width: calc((100% - 50px) / 3);
+  }
 
 /* 詳細ページ */
 .video__wrapper{
