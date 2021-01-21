@@ -37,7 +37,11 @@
         </div>
       <% end %>
       <h2 class="page-heading">
-        <%= "#{@user.channel_name}さんの動画PR"%>
+        <% if @user.videos.present? %>
+          <%= "#{@user.channel_name}さんの動画PR"%>
+        <% else %>
+          <%= "#{@user.channel_name}さんの動画PRはまだありません"%>
+        <% end %>
       </h2>
       <div class="user__card">
         <%= render partial: 'videos/video', collection: @user.videos.order("created_at DESC") %>
