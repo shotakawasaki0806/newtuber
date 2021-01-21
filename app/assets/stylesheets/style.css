@@ -355,3 +355,19 @@ a {
     width: 100%;
   }
 }
+
+/* エラーメッセージ */
+.error-alert {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5vh;
+}
+
+.error-message {
+  list-style: none;
+  color: #c4302b;
+}
+
+.login-error-message{
+  color: #c4302b;
+}

@@ -19,74 +19,74 @@ RSpec.describe User, type: :model do
       it "channel_nameが空だと登録できない" do
         @user.channel_name = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include "Channel name can't be blank"
+        expect(@user.errors.full_messages).to include "チャンネル名を入力してください"
       end
       it "emailが空だと登録できない" do
         @user.email = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include "Email can't be blank"
+        expect(@user.errors.full_messages).to include "メールアドレスを入力してください"
       end
       it "emailが登録済だと登録できない" do
         @user.save
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        expect(another_user.errors.full_messages).to include "Email has already been taken"
+        expect(another_user.errors.full_messages).to include "メールアドレスはすでに存在します"
       end
       it "emailに@が無いと登録できない" do
         @user.email = "hogehoge"
         @user.valid?
-        expect(@user.errors.full_messages).to include "Email is invalid"
+        expect(@user.errors.full_messages).to include "メールアドレスは不正な値です"
       end
       it "passwordが空だと登録できない" do
         @user.password = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password can't be blank"
+        expect(@user.errors.full_messages).to include "パスワードを入力してください"
       end
       it "passwordが5文字以下だと登録できない" do
         @user.password = "abc12"
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password is too short (minimum is 6 characters)"
+        expect(@user.errors.full_messages).to include "パスワードは6文字以上で入力してください"
       end
       it "passwordが全角だと登録できない" do
         @user.password = "ああああああ"
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password is invalid"
+        expect(@user.errors.full_messages).to include "パスワードは半角英数のみで入力してください"
       end
       it "passwordは２回入力しないと登録できない" do
         @user.password_confirmation = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
+        expect(@user.errors.full_messages).to include "パスワード（確認用）とパスワードの入力が一致しません"
       end
       it "passwordが確認用と異なると登録できない" do
         @user.password_confirmation = "11"
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
+        expect(@user.errors.full_messages).to include "パスワード（確認用）とパスワードの入力が一致しません"
       end
       it "channel_urlが空だと登録できない" do
         @user.channel_url = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include "Channel url can't be blank"
+        expect(@user.errors.full_messages).to include "チャンネルURLにはYouTubeチャンネルURLを入力してください"
       end
       it "channel_urlがYouTubeチャンネルと異なると登録できない" do
         @user.channel_url = "https://www.google.com"
         @user.valid?
-        expect(@user.errors.full_messages).to include "Channel url is invalid"
+        expect(@user.errors.full_messages).to include "チャンネルURLにはYouTubeチャンネルURLを入力してください"
       end
       it "introductionが空だと登録できない" do
         @user.introduction = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include "Introduction can't be blank"
+        expect(@user.errors.full_messages).to include "チャンネル紹介を入力してください"
       end
       it "genre_idが空だと登録できない" do
         @user.genre_id = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include "Genre can't be blank"
+        expect(@user.errors.full_messages).to include "動画ジャンルを選択してください"
       end
       it "genre_idが1だと登録できない" do
         @user.genre_id = 1
         @user.valid?
-        expect(@user.errors.full_messages).to include "Genre must be other than 1"
+        expect(@user.errors.full_messages).to include "動画ジャンルを選択してください"
       end
     end
   end

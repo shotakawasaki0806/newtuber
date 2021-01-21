@@ -1,4 +1,7 @@
 <%= form_with model: video, local: true do |f|%>
+
+  <%= render 'layouts/error_messages', model: f.object %>
+  
   <div class="field">
     <%= f.label :video_name, "動画名" %><br />
     <%= f.text_field :video_name, class: :form__text %>

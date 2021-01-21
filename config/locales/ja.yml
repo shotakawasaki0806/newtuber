@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        email: メールアドレス
+        channel_name: チャンネル名
+        channel_url: チャンネルURL
+        genre_id: 動画ジャンル
+        introduction: チャンネル紹介
+      video:
+        video_name: 動画名
+        video_url: 動画URL
+        overview: 動画概要
+        genre_id: 動画ジャンル
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              "be valid": "を選択してください"
+

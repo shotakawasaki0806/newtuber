@@ -19,32 +19,32 @@ RSpec.describe Video, type: :model do
       it "video_nameが空だと投稿できない" do
         @video.video_name = ""
         @video.valid?
-        expect(@video.errors.full_messages).to include "Video name can't be blank"
+        expect(@video.errors.full_messages).to include "動画名を入力してください"
       end
       it "video_urlが空だと投稿できない" do
         @video.video_url = ""
         @video.valid?
-        expect(@video.errors.full_messages).to include "Video url can't be blank"
+        expect(@video.errors.full_messages).to include "動画URLにはYouTube動画URLを入力してください"
       end
       it "video_urlがYouTube動画と異なると投稿できない" do
         @video.video_url = "https://www.google.com"
         @video.valid?
-        expect(@video.errors.full_messages).to include "Video url is invalid"
+        expect(@video.errors.full_messages).to include "動画URLにはYouTube動画URLを入力してください"
       end
       it "overviewが空だと投稿できない" do
         @video.overview = ""
         @video.valid?
-        expect(@video.errors.full_messages).to include "Overview can't be blank"
+        expect(@video.errors.full_messages).to include "動画概要を入力してください"
       end
       it "genre_idが空だと登録できない" do
         @video.genre_id = ""
         @video.valid?
-        expect(@video.errors.full_messages).to include "Genre can't be blank"
+        expect(@video.errors.full_messages).to include "動画ジャンルを選択してください"
       end
       it "genre_idが1だと登録できない" do
         @video.genre_id = 1
         @video.valid?
-        expect(@video.errors.full_messages).to include "Genre must be other than 1"
+        expect(@video.errors.full_messages).to include "動画ジャンルを選択してください"
       end
     end
   end
