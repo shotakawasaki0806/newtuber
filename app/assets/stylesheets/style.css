@@ -356,7 +356,7 @@ a {
   }
 }
 
-/* フッター */
+/* エラーメッセージ */
 .error-alert {
   display: flex;
   justify-content: flex-start;
@@ -364,7 +364,10 @@ a {
 }
 
 .error-message {
-  font-size: 1.8vw;
-  list-style: inside;
+  list-style: none;
+  color: #c4302b;
+}
+
+.login-error-message{
   color: #c4302b;
 }

@@ -6,7 +6,7 @@ class Video < ApplicationRecord
   belongs_to :genre
 
   validates :video_name, presence: true
-  validates :video_url, format: {with: /\A(https:\/\/)(www.youtube.com\/watch\?v=|youtu\.be\/)+[a-zA-Z0-9\-_]{11}\z/}
+  validates :video_url, format: {with: /\A(https:\/\/)(www.youtube.com\/watch\?v=|youtu\.be\/)+[a-zA-Z0-9\-_]{11}\z/, message:"にはYouTube動画URLを入力してください" }
   validates :overview, presence: true
-  validates :genre_id, presence: true, numericality: { other_than: 1 }
+  validates :genre_id, presence: true, numericality: { other_than: 1, message:"を選択してください" }
 end
