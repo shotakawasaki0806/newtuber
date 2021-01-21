@@ -4,14 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  with_options presence: true do
-    validates :channel_name, :introduction
-    validates :channel_url, format: {with: /\A(https:\/\/)(www\.youtube\.com\/(channel\/|c\/|user\/))[a-zA-Z0-9\-_]{1,}\z/}
-    validates :genre_id, numericality: { other_than: 1 }
-    PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/
-    validates_format_of :password, with: PASSWORD_REGEX
-  end
-
+  PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/
+  validates_format_of :password, with: PASSWORD_REGEX
+  validates :channel_name, presence: true
+  validates :channel_url, format: {with: /\A(https:\/\/)(www\.youtube\.com\/(channel\/|c\/|user\/))[a-zA-Z0-9\-_]{1,}\z/}
+  validates :genre_id, presence: true, numericality: { other_than: 1 }
+  validates :introduction, presence: true
+  
   has_many :videos
   has_many :comments
   has_one_attached :image

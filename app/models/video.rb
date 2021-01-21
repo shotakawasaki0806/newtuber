@@ -5,9 +5,8 @@ class Video < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
 
-  with_options presence: true do
-    validates :video_name, :overview
-    validates :video_url, format: {with: /\A(https:\/\/)(www.youtube.com\/watch\?v=|youtu\.be\/)+[a-zA-Z0-9\-_]{11}\z/}
-    validates :genre_id, numericality: { other_than: 1 }
-  end
+  validates :video_name, presence: true
+  validates :video_url, format: {with: /\A(https:\/\/)(www.youtube.com\/watch\?v=|youtu\.be\/)+[a-zA-Z0-9\-_]{11}\z/}
+  validates :overview, presence: true
+  validates :genre_id, presence: true, numericality: { other_than: 1 }
 end

@@ -355,3 +355,16 @@ a {
     width: 100%;
   }
 }
+
+/* フッター */
+.error-alert {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5vh;
+}
+
+.error-message {
+  font-size: 1.8vw;
+  list-style: inside;
+  color: #c4302b;
+}
