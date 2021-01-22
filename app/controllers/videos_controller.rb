@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_video, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :set_video, except: [:index, :new, :create, :search]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   
   def index
@@ -42,6 +42,10 @@ class VideosController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def search
+    @videos = Video.search(params[:keyword])
   end
 
   private
