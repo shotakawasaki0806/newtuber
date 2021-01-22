@@ -1,13 +1,14 @@
 window.addEventListener('load', () => {
-  var px_change = 200;
   const toTop = document.getElementById("to-top");
-  toTop.classList.remove("to-top");
+  const displayOriginal = toTop.style.display;
+  toTop.style.display = 'none';
+  var px_change = 200;
   window.addEventListener('scroll', () => {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 	if ( scrollTop > px_change ) {
-    toTop.classList.add("to-top");
+    toTop.style.display = displayOriginal;
   } else {
-    toTop.classList.remove("to-top");
+    toTop.style.display = 'none';
   }
   });
   toTop.addEventListener('click', (e) => {
