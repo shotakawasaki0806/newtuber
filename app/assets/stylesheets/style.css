@@ -148,7 +148,12 @@ a {
 }
 
 /* メイン */
-
+html{
+  scroll-behavior: smooth;
+}
+.main{
+  margin-bottom: 30px;
+}
 .greeting{
   margin-bottom: 20px;
 }
@@ -194,6 +199,20 @@ a {
   content:"";
   width: calc((100% - 50px) / 3);
   }
+.to-top{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  right: 50px;
+  bottom: 50px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+}
 
 /* 詳細ページ */
 .video__wrapper{
@@ -276,6 +295,7 @@ a {
   min-height: calc(100vh - 161px);
 }
 .user__image{
+  max-width: 300px;
   width: 40%;
   padding: 16px 0;
 }
