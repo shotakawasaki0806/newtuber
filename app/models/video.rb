@@ -9,4 +9,12 @@ class Video < ApplicationRecord
   validates :video_url, format: {with: /\A(https:\/\/)(www.youtube.com\/watch\?v=|youtu\.be\/)+[a-zA-Z0-9\-_]{11}\z/, message:"にはYouTube動画URLを入力してください" }
   validates :overview, presence: true
   validates :genre_id, presence: true, numericality: { other_than: 1, message:"を選択してください" }
+
+  def self.search(search)
+    if search != ""
+      Video.where('video_name LIKE(?) || overview LIKE(?)', "%#{search}%", "%#{search}%").order("created_at DESC")
+    else
+      Video.all.order("created_at DESC")
+    end
+  end
 end
