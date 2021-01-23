@@ -372,7 +372,6 @@ html{
     width: 30%;
   }
   .search-input {
-    min-width: 120px;
     width: 100%;
   }
   .inner {
@@ -397,7 +396,8 @@ html{
     width: 120px;
   }
   .search-input {
-    width: 120px;
+    max-width: 60px;
+    padding: 0.4em 0.8em;
   }
   .page-heading {
     font-size: 20px;
