@@ -59,7 +59,7 @@ a {
 .search-input {
   width: 300px;
   height: 31.22px;
-  padding: 0.4em 0.8em;
+  padding: 0.4em 1.6em;
   font-size: 0.8em;
   background: #fff;
   border: 1px #c4302b solid;
@@ -363,6 +363,18 @@ html{
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
+  .logo {
+    max-width: 200px;
+    min-width: 120px;
+    width: 20vw;
+  }
+  .search-form {
+    width: 30%;
+  }
+  .search-input {
+    min-width: 120px;
+    width: 100%;
+  }
   .inner {
     width: 90%;
     margin: 0 auto;
@@ -385,7 +397,7 @@ html{
     width: 120px;
   }
   .search-input {
-    width: 165px;
+    width: 120px;
   }
   .page-heading {
     font-size: 20px;
