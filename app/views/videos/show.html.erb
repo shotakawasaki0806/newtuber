@@ -9,7 +9,7 @@
       <% if current_user == @video.user %>
         <div class="video__manage">
           <%= link_to "編集する", edit_video_path(@video), class: :video__btn %>
-          <%= link_to "削除する", video_path(@video), method: :delete, class: :video__btn %>
+          <%= link_to "削除する", video_path(@video), method: :delete, class: :video__btn, data: { confirm: "この投稿を削除しますか？"} %>
         </div>
       <% end %>
 

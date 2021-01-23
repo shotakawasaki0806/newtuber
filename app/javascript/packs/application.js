@@ -15,3 +15,7 @@ require("../to_top");
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+//= require data-confirm-modal
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
