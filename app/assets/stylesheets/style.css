@@ -128,6 +128,7 @@ a {
 }
 .greeting__link{
   text-decoration: underline;
+  color: #3b4043;
 }
 .page-heading {
   font-size: 30px;
@@ -152,6 +153,7 @@ a {
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
+  color: #3b4043;
 }
 .card__summary {
   font-size: 16px;

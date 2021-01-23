@@ -61,4 +61,12 @@ gem 'devise'
 gem 'active_hash'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+<<<<<<< Updated upstream
 gem 'pry-rails'
+=======
+gem 'pry-rails'
+gem 'rails-i18n'
+gem 'data-confirm-modal'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
+>>>>>>> Stashed changes
