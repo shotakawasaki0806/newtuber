@@ -54,7 +54,7 @@ a {
   width: 200px;
 }
 .search-form {
-  
+  display: flex;	
 }
 .search-input {
   width: 300px;
@@ -67,6 +67,7 @@ a {
   transition: 0.4s ease;
 }
 .search-btn{
+  height: 31.22px;
   padding: 0.4em 0.8em;
   font-size: 0.8em;
   color: #c4302b;
