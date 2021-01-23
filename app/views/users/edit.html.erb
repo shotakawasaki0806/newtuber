@@ -5,13 +5,15 @@
 
         <%= form_with model: current_user, local: true do |f| %>
 
+        <%= render 'layouts/error_messages', model: f.object %>
+
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
         <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.label :password, "パスワード（半角英数6文字以上）" %><br />
           <%= f.password_field :password, autocomplete: "new-password" %>
         </div>
 

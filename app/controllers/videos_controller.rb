@@ -1,10 +1,10 @@
 class VideosController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_video, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :set_video, except: [:index, :new, :create, :search]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   
   def index
-    @video = Video.all
+    @video = Video.all.order("created_at DESC")
   end
 
   def new
@@ -21,6 +21,8 @@ class VideosController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @video.comments.order("created_at DESC")
   end
 
   def edit
@@ -40,6 +42,10 @@ class VideosController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def search
+    @videos = Video.search(params[:keyword])
   end
 
   private

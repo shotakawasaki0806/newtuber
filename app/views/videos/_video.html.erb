@@ -1,10 +1,14 @@
 <div class="card">
-  <%= link_to image_tag(video.image, class: :card__img ), video_path(video)%>
+  <% if video.image.present? %>
+    <%= link_to image_tag(video.image, class: :card__img ), video_path(video)%>
+  <% else %>
+    <%= link_to image_tag("no_image.png", class: :card__img), video_path(video)%>
+  <% end %>
   <div class="card__body">
     <%= link_to video.video_name, video_path(video), class: :card__title%>
     <p class="card__summary">
       <%= video.genre.name %>
     </p>
-    <%= link_to "by #{video.user.channel_name}", root_path, class: :card__user %>
+    <%= link_to "by #{video.user.channel_name}", user_path(video.user), class: :card__user %>
   </div>
 </div>

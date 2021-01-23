@@ -4,7 +4,7 @@
       <p class="video__hedding">
         <%= @video.video_name%>
       </p>
-      <%= link_to "by #{@video.user.channel_name}", root_path, class: :video__user %>
+      <%= link_to "by #{@video.user.channel_name}", user_path(@video.user), class: :video__user %>
       
       <% if current_user == @video.user %>
         <div class="video__manage">
@@ -14,7 +14,11 @@
       <% end %>
 
       <div class="video__image">
-        <%= image_tag @video.image %>
+        <% if @video.image.present? %>
+          <%= image_tag @video.image %>
+        <% else %>
+          <%= image_tag "no_image.png" %>
+        <% end %>
       </div>
       <div class="video__body">
         <div class="video__detail">
@@ -26,7 +30,7 @@
         <div class="video__detail">
           <p class="detail__title">動画URL</p>
           <p class="detail__message">
-            <%= @video.video_url %>
+            <%= link_to "#{@video.video_url}", "#{@video.video_url}",target: :_blank, rel: "noopener noreferrer" %>
           </p>
         </div>
         <div class="video__detail">
@@ -37,24 +41,24 @@
         </div>
       </div>
       <div class="video__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-          <%# <%= form_with local: true do |f|%>
+        <% if user_signed_in? %>
+          <%= form_with model: [@video, @comment], local: true do |f|%>
             <div class="field">
-              <%# <%= f.label :hoge, "コメント" %><br />
-              <%# <%= f.text_field :hoge %>
+              <%= f.label :text, "コメント" %><br />
+              <%= f.text_field :text %>
             </div>
             <div class="actions">
-              <%# <%= f.submit "送信する", class: :form__btn  %>
+              <%= f.submit "送信する", class: :form__btn  %>
             </div>
-          <%# <% end %> 
-        <%# // ログインしているユーザーには上記を表示する %>
+          <% end %> 
+        <% end %> 
         <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+          <% @comments.each do |comment|%>
             <li class="comments_list">
-              <%# <%= " コメントのテキスト "%>
-              <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
+              <%= comment.text%>
+              <%= link_to "（#{comment.user.channel_name}）", user_path(comment.user), class: :comment_user %>
             </li>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+          <% end %>
         </ul>
       </div>
     </div>

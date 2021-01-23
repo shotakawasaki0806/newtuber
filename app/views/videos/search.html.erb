@@ -7,7 +7,9 @@
       </div>
     <% end %>
     <div class="card__wrapper">
-      <%= render partial: "video", collection: @video %>
+      <% @videos.each do |video| %>
+        <%= render partial: "video", locals: { video: video } %>
+      <% end %>
     </div>
     <div class="to-top", id="to-top">
       <%= "⇧" %>

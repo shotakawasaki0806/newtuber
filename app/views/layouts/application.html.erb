@@ -17,10 +17,13 @@
           <div class="red__left">
             <%= link_to image_tag("logo3.png", class: :logo), root_path %>
           </div>
+          <%= form_with(url: search_videos_path, local: true, method: :get, class: "search-form") do |f| %>
+            <%= f.text_field :keyword, placeholder: "検索", class: "search-input" %>
+            <%= f.submit "検索", class: "search-btn" %>
+          <% end %>
           <% if user_signed_in? %>
             <div class="red__right">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :red__logout %>
-              <%= link_to "登録変更", edit_user_path(current_user), class: :red__btn %>
               <%= link_to "New Video", new_video_path, class: :red__btn %>
             </div>
           <% else %>
