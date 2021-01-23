@@ -384,6 +384,9 @@ html{
   .logo {
     width: 120px;
   }
+  .search-input {
+    width: 165px;
+  }
   .page-heading {
     font-size: 20px;
   }
