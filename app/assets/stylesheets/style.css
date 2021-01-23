@@ -53,34 +53,6 @@ a {
 .logo {
   width: 200px;
 }
-.search-form {
-  display: flex;	
-}
-.search-input {
-  width: 300px;
-  height: 31.22px;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  background: #fff;
-  border: 1px #c4302b solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
-}
-.search-btn{
-  height: 31.22px;
-  padding: 0.4em 0.8em;
-  font-size: 0.8em;
-  color: #c4302b;
-  background: #fff;
-  border: 1px #c4302b solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
-}
-.search-btn:hover{
-  color: #fff;
-  background: #c4302b;
-  border: 1px #fff solid;
-}
 .red__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -161,6 +133,38 @@ html{
 .greeting__link{
   text-decoration: underline;
   color: #3b4043;
+}
+.search-form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.search-input {
+  width: 50%;
+  height: 31.22px;
+  padding: 0.4em 0.8em;
+  font-size: 0.8em;
+  background: #fff;
+  border: 1px #c4302b solid;
+  border-radius: 3px;
+}
+.search-input:focus {
+  border: 2px #c4302b solid;
+  border-radius: 3px;
+  outline: none;
+}
+.search-btn{
+  height: 31.22px;
+  padding: 0.4em 0.8em;
+  font-size: 0.8em;
+  color: #c4302b;
+  background: #fff;
+  border: 1px #c4302b solid;
+  border-radius: 3px;
+}
+.search-btn:hover{
+  color: #fff;
+  background: #c4302b;
+  border: 1px #fff solid;
 }
 .page-heading {
   font-size: 30px;
@@ -363,17 +367,6 @@ html{
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
-  .logo {
-    max-width: 200px;
-    min-width: 120px;
-    width: 20vw;
-  }
-  .search-form {
-    width: 30%;
-  }
-  .search-input {
-    width: 100%;
-  }
   .inner {
     width: 90%;
     margin: 0 auto;
@@ -395,8 +388,7 @@ html{
   .logo {
     width: 120px;
   }
-  .search-input {
-    width: 48.08px;
+  .red__btn{
     padding: 0.4em 0.8em;
   }
   .page-heading {

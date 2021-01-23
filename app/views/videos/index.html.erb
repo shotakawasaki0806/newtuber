@@ -6,6 +6,10 @@
         <%= link_to "#{current_user.channel_name}さん", user_path(current_user), class: :greeting__link%>
       </div>
     <% end %>
+    <%= form_with(url: search_videos_path, local: true, method: :get, class: "search-form") do |f| %>
+      <%= f.text_field :keyword, placeholder: "検索", class: "search-input" %>
+      <%= f.submit "検索", class: "search-btn" %>
+    <% end %>
     <div class="card__wrapper">
       <%= render partial: "video", collection: @video %>
     </div>
