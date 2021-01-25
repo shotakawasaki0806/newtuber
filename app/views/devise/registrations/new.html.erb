@@ -3,24 +3,30 @@
     <div class="form__wrapper">
       <h2 class="page-heading">ユーザー新規登録</h2>
 
+      <%= link_to image_tag("google_signin.png", class: :google__img), user_google_oauth2_omniauth_authorize_path, method: :post%>
+
         <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
         <%= render 'layouts/error_messages', model: f.object %>
 
-        <div class="field">
+        <div class="field">image
           <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
-        <div class="field">
-          <%= f.label :password, "パスワード（半角英数6文字以上）" %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-        </div>
+        <%if @sns_id.present? %>
+          <%= hidden_field_tag :sns_auth, @sns_id %>
+        <% else %>
+          <div class="field">
+            <%= f.label :password, "パスワード（6文字以上）" %><br />
+            <%= f.password_field :password, autocomplete: "new-password" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :password_confirmation, "パスワード再入力" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
+          <div class="field">
+            <%= f.label :password_confirmation, "パスワード再入力" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          </div>
+        <% end %>
 
         <div class="field">
           <%= f.label :channel_name, "チャンネル名" %><br />

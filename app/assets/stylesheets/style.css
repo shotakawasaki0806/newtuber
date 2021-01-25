@@ -83,6 +83,9 @@ a {
 .red__logout:hover{
   opacity: 0.5;
 }
+.google__img{
+  width: 160px;
+}
 
 /* フォーム周り */
 .form__wrapper{

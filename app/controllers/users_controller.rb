@@ -3,13 +3,21 @@ class UsersController < ApplicationController
   before_action :move_to_index, only: [:edit, :update]
 
   def edit
+    @sns = SnsCredential.find_by(user_id: current_user.id)
   end
   
   def update
+    if params[:sns_auth] != nil
+      pass = Devise.friendly_token
+      params[:user][:password] = pass
+      params[:user][:password_confirmation] = pass
+      @sns = params[:sns_auth]
+    end
     if current_user.update(user_params)
       sign_in(current_user, bypass: true)
       redirect_to user_path(@user)
     else
+      @sns = params[:sns_auth]
       render :edit
     end
   end
