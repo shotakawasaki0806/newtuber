@@ -29,4 +29,5 @@ class User < ApplicationRecord
     end
     { user: user, sns: sns }
   end
+  
 end
