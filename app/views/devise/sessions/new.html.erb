@@ -7,6 +7,8 @@
       <%= flash[:notice] %>
       <%= flash[:alert] %>
       </div>
+
+      <%= link_to image_tag("google_signin.png", class: :google__img), user_google_oauth2_omniauth_authorize_path, method: :post%>
       
       <%= form_with model: @user, url: user_session_path, local: true do |f| %>
 
