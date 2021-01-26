@@ -39,6 +39,10 @@
             <%= @video.overview %>
           </p>
         </div>
+        <div class="tweet">
+        <p class="detail__title">SNSで共有</p>
+        <%= link_to (image_tag "twitter_logo.png", class: :sns__img), "https://twitter.com/intent/tweet?text=#{@video.video_name}#{@video.video_url}",target: :_blank, rel: "noopener noreferrer" %>
+        </div>
       </div>
       <div class="video__comments">
         <% if user_signed_in? %>
