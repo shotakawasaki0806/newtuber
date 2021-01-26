@@ -265,6 +265,9 @@ html{
   font-size: 20px;
   font-weight: bold;
 }
+.detail__message{
+  word-break: break-all;
+}
 .video__manage{
   display: flex;
   justify-content: center;
