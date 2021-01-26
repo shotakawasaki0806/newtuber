@@ -100,6 +100,16 @@ a {
   margin: 10px 0;
 }
 
+.image-preview{
+  width: 50%;
+  padding-bottom: 10px;
+}
+
+.mainimage-preview{
+  width: 20%;
+  padding-bottom: 10px;
+}
+
 .actions{
   margin-bottom: 40px;
 }
@@ -312,7 +322,6 @@ html{
 .table{
   border-collapse: collapse;
   margin-bottom: 16px;
-  width: 100%;
 }
 .table__col1{
   text-align: left;
@@ -320,15 +329,16 @@ html{
   background: #fafafa;
   border-collapse: collapse;
   border: 1px solid #f5f5f5;
-  width: 15%;
+  width: 140px;
   padding: 8px;
 }
 .table__col2{
   text-align: left;
   border: 1px solid #f5f5f5;
   border-collapse: collapse;
-  width: 85%;
+  width: 370px;
   padding: 16px 8px;
+  word-break: break-all;
 }
 .user__manage{
   display: flex;
@@ -388,11 +398,17 @@ html{
 
  /* スマホ表示 */
 @media (max-width: 599px) {
+  .inner {
+    width: 95%;
+  }
   .logo {
     width: 120px;
   }
   .red__btn{
-    padding: 0.4em 0.8em;
+    padding: 0.4em 0.4em;
+  }
+  .red__logout{
+    padding: 0.4em 0.4em;
   }
   .page-heading {
     font-size: 20px;
@@ -429,4 +445,5 @@ html{
 
 .login-error-message{
   color: #c4302b;
+  margin-bottom: 10px;
 }

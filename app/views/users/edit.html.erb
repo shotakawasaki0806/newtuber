@@ -37,11 +37,6 @@
         </div>
 
         <div class="field">
-          <%= f.label :image, "チャンネル画像（任意）" %><br />
-          <%= f.file_field :image %>
-        </div>
-
-        <div class="field">
           <%= f.label :genre_id, "動画ジャンル" %><br />
           <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, ) %>
         </div>
@@ -50,6 +45,13 @@
           <%= f.label :introduction, "チャンネル紹介" %><br />
           <%= f.text_area :introduction, class: :form__text %>
         </div>
+
+        <div class="field" id= "youtube_image">
+          <%= f.label :image, "チャンネル画像（任意）" %><br />
+          <%= f.file_field :image %>
+        </div>
+
+        <div class="mainimage-preview" id="image-preview"></div>
 
         <div class="actions">
           <%= f.submit "登録変更", class: :form__btn  %>
