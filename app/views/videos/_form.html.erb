@@ -22,10 +22,12 @@
     <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, ) %>
   </div>
 
-  <div class="field">
+  <div class="field", id= "youtube_image">
     <%= f.label :image, "サムネイル画像（任意）" %><br />
     <%= f.file_field :image %>
   </div>
+
+  <div class="image-preview" id="image-preview"></div>
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
