@@ -36,7 +36,7 @@
         <div class="video__detail">
           <p class="detail__title">動画概要</p>
           <p class="detail__message">
-            <%= @video.overview %>
+            <%= text_url_to_link(simple_format(@video.overview)).html_safe %>
           </p>
         </div>
         <div class="tweet">
