@@ -27,7 +27,7 @@
           </tr>
           <tr>
             <th class="table__col1">チャンネル紹介</th>
-            <td class="table__col2"><%= @user.introduction %></td>
+            <td class="table__col2"><%= text_url_to_link(simple_format(@user.introduction)).html_safe %></td>
           </tr>
         </tbody>
       </table>
