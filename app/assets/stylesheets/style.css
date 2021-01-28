@@ -372,6 +372,11 @@ html{
   justify-content: space-between;
   align-items: center;
 }
+.user__card::after {
+  display: block;
+  content:"";
+  width: calc((100% - 50px) / 3);
+  }
 /* フッター */
 
 .footer {
