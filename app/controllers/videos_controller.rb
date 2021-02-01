@@ -45,7 +45,15 @@ class VideosController < ApplicationController
   end
 
   def search
-    @videos = Video.search(params[:keyword])
+    if params[:keyword].present?
+      split_keywords = (params[:keyword]).split(/[[:blank:]]+/)
+      @videos = Video
+      split_keywords.each do |keyword|
+        @videos = @videos.search(keyword)
+      end
+    else
+      @videos = Video.search(params[:keyword])
+    end
   end
 
   private
