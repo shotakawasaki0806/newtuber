@@ -32,6 +32,11 @@ img {
 a {
   text-decoration: none;
   color: #3b4043;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #c4302b;
 }
 
 /* ヘッダー */
