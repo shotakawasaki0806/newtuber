@@ -80,3 +80,4 @@ gem "omniauth-rails_csrf_protection"
 gem 'omniauth', '~>1.9.1'
 gem 'rails_autolink', '~> 1.1', '>= 1.1.6'
 gem 'rinku', '~> 2.0', '>= 2.0.6'
+gem 'ransack'
