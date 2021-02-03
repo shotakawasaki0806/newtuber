@@ -23,6 +23,7 @@ class VideosController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @video.comments.order("created_at DESC")
+    @replies = @comments
   end
 
   def edit
