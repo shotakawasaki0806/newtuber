@@ -465,6 +465,9 @@ html{
   .table{
     width: 100%;
   }
+  .to-top{
+    right: 10px;
+  }
 }
 
 /* エラーメッセージ */
