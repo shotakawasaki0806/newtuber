@@ -116,7 +116,7 @@ a:hover {
 }
 
 .actions{
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .form__btn{
@@ -138,6 +138,12 @@ a:hover {
   cursor: pointer;
 }
 
+.reply{
+  margin-bottom: 10px;
+}
+.reply_field{
+  margin-bottom: 5px;
+}
 /* メイン */
 html{
   scroll-behavior: smooth;
@@ -305,12 +311,26 @@ html{
 }
 
 .comments_lists{
+  padding-top: 20px;
   padding-left: 20px;
-  height: 100px;
+  height: 210px;
   overflow: auto;
 }
 
 .comments_list{
+  list-style-type: square;
+  padding-bottom: 5px;
+}
+
+.comment{
+  padding-bottom: 5px;
+}
+
+.reply_lists{
+  padding-left: 20px;
+}
+
+.reply_list{
   list-style-type: square;
   padding-bottom: 5px;
 }
