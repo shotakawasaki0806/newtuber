@@ -80,7 +80,7 @@
                 <%= form_with model: [@video, @comment], local: true do |f|%>
                   <div class="reply_field">
                     <%= f.text_field :text %>
-                    <%= f.hidden_field :reply_comment_id, :value => comment.id  %>
+                    <%= f.hidden_field :reply_comment_id, value: comment.id  %>
                   </div>
                   <div class="reply">
                     <%= f.submit "返信する", class: :form__btn  %>

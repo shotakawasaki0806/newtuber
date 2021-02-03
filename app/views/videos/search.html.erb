@@ -7,9 +7,16 @@
       </div>
     <% end %>
     <%= form_with(url: search_videos_path, local: true, method: :get, class: "search-form") do |f| %>
-      <%= f.text_field :keyword, placeholder: "検索", class: "search-input" %>
+      <%= f.text_field :keyword, placeholder: "検索",  value: @keyword, class: "search-input" %>
       <%= f.submit "検索", class: "search-btn" %>
     <% end %>
+    <div class="search_result">
+    <% if @keyword.present? && @videos.present? %>
+      「<%= "#{@keyword}" %>」の検索結果
+    <% elsif @videos.empty? %>  
+      「<%= "#{@keyword}" %>」に一致する検索結果はありません
+    <% end %>
+    </div>
     <div class="card__wrapper">
       <% @videos.each do |video| %>
         <%= render partial: "video", locals: { video: video }%>
