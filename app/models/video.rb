@@ -14,7 +14,7 @@ class Video < ApplicationRecord
     if search != ""
       Video.where('video_name LIKE(?) || overview LIKE(?)', "%#{search}%", "%#{search}%").order("created_at DESC")
     else
-      Video.all.order("created_at DESC")
+      Video.includes(:user).order("created_at DESC")
     end
   end
 end

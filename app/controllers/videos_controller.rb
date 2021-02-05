@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
   
   def index
-    @video = Video.all.order("created_at DESC")
+    @video = Video.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -22,7 +22,7 @@ class VideosController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @video.comments.order("created_at DESC")
+    @comments = @video.comments.includes(:user).order("created_at DESC")
     @replies = @comments
   end
 
@@ -53,6 +53,7 @@ class VideosController < ApplicationController
       split_keywords.each do |keyword|
         @videos = @videos.search(keyword)
       end
+      @videos = @videos.includes(:user)
     else
       @videos = Video.search(params[:keyword])
     end
@@ -60,7 +61,7 @@ class VideosController < ApplicationController
 
   def category
     if params[:id].to_i > 1 && params[:id].to_i < 23
-    @videos = Video.where(genre_id: params[:id]).order("created_at DESC")
+    @videos = Video.where(genre_id: params[:id]).includes(:user).order("created_at DESC")
     @genre = Genre.find(params[:id])
     else
       redirect_to root_path
