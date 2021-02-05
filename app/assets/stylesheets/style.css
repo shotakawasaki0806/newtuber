@@ -223,11 +223,12 @@ html{
   font-size: 16px;
 }
 .card__user {
-  display: block;
   font-size: 12px;
   color: #999;
-  text-align: right;
   text-decoration: underline;
+}
+.user__body{
+  text-align: right;
 }
 .card__wrapper::after {
   display: block;
