@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :set_video, except: [:index, :new, :create, :search]
+  before_action :authenticate_user!, except: [:index, :show, :search, :category]
+  before_action :set_video, except: [:index, :new, :create, :search, :category]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   
   def index
@@ -55,6 +55,15 @@ class VideosController < ApplicationController
       end
     else
       @videos = Video.search(params[:keyword])
+    end
+  end
+
+  def category
+    if params[:id].to_i > 1 && params[:id].to_i < 23
+    @videos = Video.where(genre_id: params[:id]).order("created_at DESC")
+    @genre = Genre.find(params[:id])
+    else
+      redirect_to root_path
     end
   end
 
