@@ -1,0 +1,15 @@
+<main class="main">
+  <div class="inner">
+    <div class="genre_result">
+    「<%= "#{@genre.name}" %>」の動画PR
+    </div>
+    <div class="card__wrapper">
+      <% @videos.each do |video| %>
+        <%= render partial: "video", locals: { video: video }%>
+      <% end %>
+    </div>
+    <div class="to-top", id="to-top">
+      <%= "⇧" %>
+    </div>
+  </div>
+</main>

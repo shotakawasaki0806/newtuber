@@ -248,6 +248,11 @@ html{
   color: #999;
   cursor: pointer;
 }
+.genre_result{
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
 
 /* 詳細ページ */
 .video__wrapper{
@@ -304,10 +309,15 @@ html{
   color: #fff;
   background: #999;
 }
+.sns {
+  margin-bottom: 8px;
+}
 .sns__img{
   width: 40px;
 }
-
+.genre__btn{
+  font-size: 18px;
+}
 .video__comments{
   background-color: #f6f6f6;
   padding: 20px;
