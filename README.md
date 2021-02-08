@@ -33,11 +33,12 @@
 
 ## comments テーブル
 
-| Column | Type       | Options           |
-| ------ | ---------- | ----------------- |
-| text   | text       | null: false       |
-| user   | references | foreign_key: true |
-| video  | references | foreign_key: true |
+| Column           | Type       | Options           |
+| ---------------- | ---------- | ----------------- |
+| text             | text       | null: false       |
+| user             | references | foreign_key: true |
+| video            | references | foreign_key: true |
+| reply_comment_id | integer    |                   |
 
 ### Association
 
