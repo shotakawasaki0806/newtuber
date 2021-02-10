@@ -13,6 +13,11 @@ class UsersController < ApplicationController
       params[:user][:password_confirmation] = pass
       @sns = params[:sns_auth]
     end
+    if params[:user][:password].blank? && params[:user][:password_confirmation].blank?
+      user_params = params.require(:user).permit(:email, :channel_name, :channel_url, :introduction, :genre_id, :image)
+    else
+      user_params = params.require(:user).permit(:email, :password, :password_confirmation, :channel_name, :channel_url, :introduction, :genre_id, :image)
+    end
     if current_user.update(user_params)
       sign_in(current_user, bypass: true)
       redirect_to user_path(@user)
@@ -26,10 +31,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :channel_name, :channel_url, :introduction, :genre_id, :image)
-  end
 
   def move_to_index
     unless current_user.id == @user.id
