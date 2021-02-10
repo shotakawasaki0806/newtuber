@@ -11,7 +11,7 @@ class Video < ApplicationRecord
   validates :genre_id, presence: true, numericality: { other_than: 1, message:"を選択してください" }
 
   def self.search(search)
-    if search != ""
+    if search != "" && search != " " && search != "　"
       Video.where('video_name LIKE(?) || overview LIKE(?)', "%#{search}%", "%#{search}%").order("created_at DESC")
     else
       Video.includes(:user).order("created_at DESC")
