@@ -12,6 +12,8 @@ ja:
         video_url: 動画URL
         overview: 動画概要
         genre_id: 動画ジャンル
+      comment:
+        text: コメント
     errors:
       models:
         user:
