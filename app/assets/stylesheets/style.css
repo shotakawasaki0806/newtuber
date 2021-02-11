@@ -324,6 +324,10 @@ html{
 .sns {
   margin-bottom: 8px;
 }
+.sns__title{
+  font-size: 20px;
+  font-weight: bold;
+}
 .sns__img{
   width: 40px;
 }

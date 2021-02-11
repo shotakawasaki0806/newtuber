@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="sns" >
-        <p class="detail__title">SNSで共有</p>
+        <p class="sns__title">SNSで共有</p>
         <%= link_to (image_tag "twitter_logo.png", class: :sns__img), "https://twitter.com/intent/tweet?text=#{@video.video_name}#{@video.video_url}",target: :_blank, rel: "noopener noreferrer" %>
         <%= link_to (image_tag "facebook_logo.png", class: :sns__img), "https://www.facebook.com/share.php?u=#{@video.video_url}",target: :_blank, rel: "noopener noreferrer" %>
         <%= link_to (image_tag "line_logo.png", class: :sns__img), "https://social-plugins.line.me/lineit/share?url=#{@video.video_url}",target: :_blank, rel: "noopener noreferrer" %>
