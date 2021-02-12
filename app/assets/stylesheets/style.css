@@ -105,7 +105,7 @@ textarea {
 }
 
 .form__text {
-  width: 504px;
+  width: 506px;
 }
 
 .email__text {
@@ -526,7 +526,6 @@ html{
     min-width: 153px;
   }
   .form__text {
-    max-width: 500px;
     width: 83%;
     min-width: 153px;
   }
