@@ -23,17 +23,14 @@
           <%= image_tag "no_image.png" %>
         <% end %>
       </div>
+      <div class="video__link">
+        <%= link_to "<動画視聴はこちら>", "#{@video.video_url}",target: :_blank, rel: "noopener noreferrer" %>
+      </div>
       <div class="video__body">
         <div class="video__detail">
           <p class="detail__title">動画ジャンル</p>
           <p class="detail__message">
             <%= @video.genre.name %>
-          </p>
-        </div>
-        <div class="video__detail">
-          <p class="detail__title">動画URL</p>
-          <p class="detail__message">
-            <%= link_to "#{@video.video_url}", "#{@video.video_url}",target: :_blank, rel: "noopener noreferrer" %>
           </p>
         </div>
         <div class="video__detail">

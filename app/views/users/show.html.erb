@@ -11,15 +11,14 @@
           <%= image_tag "no_image.png" %>
         <% end %>
       </div>
+      <div class="channel__link">
+        <%= link_to "<チャンネルはこちら>", "#{@user.channel_url}",target: :_blank, rel: "noopener noreferrer" %>
+      </div>
       <table class="table">
         <tbody>
           <tr>
             <th class="table__col1">チャンネル名</th>
             <td class="table__col2"><%= @user.channel_name %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">チャンネルURL</th>
-            <td class="table__col2"><%= link_to "#{@user.channel_url}", "#{@user.channel_url}",target: :_blank, rel: "noopener noreferrer" %></td>
           </tr>
           <tr>
             <th class="table__col1">動画ジャンル</th>

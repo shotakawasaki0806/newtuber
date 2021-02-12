@@ -33,6 +33,7 @@ a {
   text-decoration: none;
   color: #3b4043;
   font-weight: bold;
+  word-break: break-all;
 }
 
 a:hover {
@@ -87,6 +88,7 @@ a:hover {
 }
 .red__logout:hover{
   opacity: 0.5;
+  color: #fff;
 }
 .google__img{
   width: 160px;
@@ -280,6 +282,13 @@ html{
   margin: 0 auto;
   padding: 16px 0;
 }
+.video__link{
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
 .video__body{
   display: flex;
   align-items: center;
@@ -379,6 +388,10 @@ html{
   max-width: 300px;
   width: 40%;
   padding: 16px 0;
+}
+.channel__link{
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 .table{
   border-collapse: collapse;
