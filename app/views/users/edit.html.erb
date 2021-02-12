@@ -9,7 +9,7 @@
 
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: :email__text %>
         </div>
 
         <% if @sns.present? %>
@@ -28,12 +28,12 @@
 
         <div class="field">
           <%= f.label :channel_name, "チャンネル名" %><br />
-          <%= f.text_field :channel_name %>
+          <%= f.text_field :channel_name, class: :form__text %>
         </div>
 
         <div class="field">
           <%= f.label :channel_url, "チャンネルURL" %><br />
-          <%= f.text_field :channel_url %>
+          <%= f.text_field :channel_url, class: :form__text %>
         </div>
 
         <div class="field">
