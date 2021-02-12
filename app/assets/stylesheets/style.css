@@ -40,6 +40,11 @@ a:hover {
   color: #FF0000;
 }
 
+textarea {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  font-size: 16px;
+}
+
 /* ヘッダー */
 
 .header {
@@ -100,7 +105,11 @@ a:hover {
 }
 
 .form__text {
-  width: 50%;
+  width: 500px;
+}
+
+.email__text {
+  width: 250px;
 }
 
 .field{
@@ -510,6 +519,16 @@ html{
   }
   .to-top{
     right: 10px;
+  }
+  .email__text {
+    max-width: 250px;
+    width: 80%;
+    min-width: 153px;
+  }
+  .form__text {
+    max-width: 500px;
+    width: 83%;
+    min-width: 153px;
   }
 }
 
