@@ -65,6 +65,7 @@ https://newtuber.herokuapp.com/
 - JavaScriptの活用強化
 - 検索機能の強化（or検索やnot検索等）
 - インスタグラムとの連携
+- コメント返信欄の表示簡略化
 
 ## DB設計
 
