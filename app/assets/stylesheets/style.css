@@ -287,7 +287,7 @@ html{
   text-decoration: underline;
 }
 .video__image{
-  width: 40%;
+  width: 500px;
   margin: 0 auto;
   padding: 16px 0;
 }
@@ -482,6 +482,10 @@ html{
   .video_image{
     width: 60%;
   }
+  .video__image{
+    max-width: 500px;
+    width: 60%;
+  }
 }
 
  /* スマホ表示 */
@@ -528,6 +532,10 @@ html{
   .form__text {
     width: 83%;
     min-width: 153px;
+  }
+  .video__image{
+    max-width: 320px;
+    width: 90%;
   }
 }
 
